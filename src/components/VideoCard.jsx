@@ -18,14 +18,15 @@ function VideoCard({
 }) {
   return (
     <Card sx={{width :{md: "320px", xs: "100%"}, boxShadow:"none", borderRadius: 0}}>
-      <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
+      <Link to={videoId ? `/video/${videoId}` : demoVideoUrl} >
         <CardMedia
           image={snippet?.thumbnails?.high?.url}
           alt={snippet?.title}
-          sx={{ width: 358, height: 180 }}
+          sx={{ width: {md: "358px", xs: "280px"}, height: 180, objectFit: "cover"} }
+
         />
       </Link>
-      <CardContent sx={{ backgroundColor: "#1e1e1e", height: "106" }}>
+      <CardContent sx={{ backgroundColor: "#1e1e1e", height: "80px" }}>
         <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
           <Typography variant="subtitle1" fontWeight="bold" color="#fff">
             {snippet?.title.slice(0, 60) || demoVideoTitle.slice(0, 60)}  
