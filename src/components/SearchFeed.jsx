@@ -8,6 +8,8 @@ function SearchFeed() {
   const {searchTerm} = useParams()
   const [videos , setVideos] = useState([])
 
+  console.log(videos)
+
 useEffect(()=>{
   FetchFromAPI(`search?part=snippet&q=${searchTerm}`)
   .then((data)=> setVideos(data.items))
@@ -17,6 +19,7 @@ console.log(videos)
 
   return (
       <Box p={2} sx={{ overflowY: "auto", height: "90vh", flex: 2 }}>
+
         <Typography
           variant="h4"
           fontWeight="bold"

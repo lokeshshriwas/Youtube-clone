@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Stack } from "@mui/material";
-import { VideoCard, ChannelCard } from "./";
+import { VideoCard, ChannelCard, PlaylistCard } from "./";
 
 const Videos = ({ videos, direction }) => {
   if (!videos?.length) return "Loading...";
@@ -8,17 +8,22 @@ const Videos = ({ videos, direction }) => {
     <Stack
       sx={{ flexDirection: {xs: "row", md: `${direction}`} }}
       flexWrap="wrap"
-      justifyContent="start"
+      justifyContent={{xs: "center", sm:"start"}}
       alignItems="center"
       overflow="hidden"
       gap={2}  
     >
       {videos.map((item, idx) => (
-        <Box key={idx}>
-          {item.id.videoId && <VideoCard video={item} />}
+        item ? (
+          <Box key={idx}>
+          {item?.snippet?.resourceId?.videoId && <VideoCard video={item}/> }
+          {item.id.videoId  && <VideoCard video={item} />}
           {item.id.channelId && <ChannelCard channelDetail={item} />}
+          {item.id.playlistId && <PlaylistCard playlistDetail={item}/>}
         </Box>
+        ) : null
       ))}
+      {console.log(videos)}
     </Stack>
   );
 };

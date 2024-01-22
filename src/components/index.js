@@ -9,5 +9,7 @@ import Sidebar from "./Sidebar"
 import VideoCard from "./VideoCard"
 import ChannelDetails from "./ChannelDetails"
 import ChannelCard from "./ChannelCard"
+import PlaylistCard from "./PlaylistCard"
+import PlaylistDetails from "./PlaylistDetails"
 
-export {ChannelDetail, Feed, SearchFeed, VideoDetails, Navbar, SearchBar, Videos, Sidebar, ChannelCard, VideoCard, ChannelDetails}
+export {ChannelDetail, Feed, SearchFeed, VideoDetails, Navbar, PlaylistDetails, SearchBar, Videos, Sidebar, ChannelCard, VideoCard, PlaylistCard, ChannelDetails}

@@ -4,8 +4,6 @@ const BASE_URL = import.meta.env.VITE_BASE_URL;
 const options = {
     params: {
       maxResults:"50",
-      part: 'snippet',
-      videoId: 'M7FIvfx5J10'
     },
     headers: {
       'X-RapidAPI-Key': import.meta.env.VITE_RAPID_API_KEY,
