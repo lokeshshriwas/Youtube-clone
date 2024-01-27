@@ -27,7 +27,7 @@ function VideoCard({
 
         />
       </Link>
-      <CardContent sx={{ backgroundColor: "#1e1e1e", height: "80px" }}>
+      <CardContent sx={{ backgroundColor: "#0F0F0F", height: "80px", border: "none"}}>
         <Link to={(videoId || snippet.resourceId.videoId) ? `/video/${videoId || snippet.resourceId.videoId}` : demoVideoUrl}>
           <Typography variant="subtitle1" fontWeight="bold" color="#fff">
             {snippet?.title.slice(0, 60) || demoVideoTitle.slice(0, 60)}  

@@ -34,7 +34,7 @@ function VideoDetails() {
   } = videoDetail;
 
   return (
-    <Box minHeight="95vh">
+    <Box minHeight="95vh" backgroundColor="#0F0F0F" border={"none"}>
       <Stack direction={{ xs: "column", md: "row" }}>
         <Box flex={1}>
           <Box sx={{ width: "100%", postion: "sticky", top: "86px" }}>
