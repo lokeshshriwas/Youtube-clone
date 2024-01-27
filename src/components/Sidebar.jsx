@@ -1,6 +1,7 @@
 import React from "react";
 import { Stack } from "@mui/material";
 import { categories } from "../utils/constants";
+import "../index.css"
 
 
 const Sidebar = ({selectedCategory, setSelectedCategory}) => (
@@ -24,14 +25,15 @@ const Sidebar = ({selectedCategory, setSelectedCategory}) => (
       >
         <span
           style={{
-            color: category.name === selectedCategory ? "white" : "red",
-            marginRight: "15px",
+            color: category.name === selectedCategory ? "white" : "red",          
           }}
+          className="filter-Container"
         >
-          {<category.icon />}
+          {<category.icon className="icon"/>}
         </span>
         <span
           style={{ opacity: category.name === selectedCategory ? "1" : "0.8" }}
+          className="filter-name"
         >
           {category.name}
         </span>
