@@ -21,8 +21,6 @@ function PlaylistDetails() {
     ).then((mainData) => setVideo(mainData?.items));
   }, [id]);
 
-  console.log(video);
-
   if (!playlistDetail?.snippet) return "loading...";
   return (
     <Box minHeight="95vh">

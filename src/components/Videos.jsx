@@ -14,7 +14,7 @@ const Videos = ({ videos, direction }) => {
       gap={2}  
     >
       {videos.map((item, idx) => (
-        item ? (
+        item && (item?.snippet?.liveBroadcastContent === "none")  ? (
           <Box key={idx}>
           {item?.snippet?.resourceId?.videoId && <VideoCard video={item}/> }
           {item.id.videoId  && <VideoCard video={item} />}
@@ -23,7 +23,6 @@ const Videos = ({ videos, direction }) => {
         </Box>
         ) : null
       ))}
-      {console.log(videos)}
     </Stack>
   );
 };

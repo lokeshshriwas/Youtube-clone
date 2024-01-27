@@ -10,6 +10,11 @@ function VideoDetails() {
   const { id } = useParams();
   const [videoDetail, setVideoDetail] = useState(null);
   const [videos, setVideos] = useState(null);
+  const [showMore, setShowMore] = useState(false)
+
+  const handleShowMore = () => {
+    setShowMore(!showMore)
+  }
 
   useEffect(() => {
     FetchFromAPI(`videos?part=snippet,statistics&id=${id}`).then((data) =>
@@ -24,7 +29,7 @@ function VideoDetails() {
   if (!videoDetail?.snippet) return "loading...";
 
   const {
-    snippet: { title, channelId, channelTitle },
+    snippet: { title, channelId, channelTitle, description },
     statistics: { viewCount, likeCount },
   } = videoDetail;
 
@@ -67,6 +72,11 @@ function VideoDetails() {
                   {parseInt(likeCount).toLocaleString()} likes
                 </Typography>
               </Stack>
+            </Stack>
+            <Stack py={1} px={2} onClick={handleShowMore} bgcolor={"#212121"} borderRadius={"20px"} >
+              <Typography variant="subtitle2" color="#fff" >
+                  {showMore ? (description) : (description.slice(0, 250) + "...more")}
+              </Typography>
             </Stack>
           </Box>
         </Box>
