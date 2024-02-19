@@ -3,6 +3,7 @@ import { Box, Stack } from "@mui/material";
 import { VideoCard, ChannelCard, PlaylistCard } from "./";
 
 const Videos = ({ videos, direction }) => {
+  console.log(videos)
   if (!videos?.length) return "Loading...";
   return (
     <Stack
@@ -14,7 +15,7 @@ const Videos = ({ videos, direction }) => {
       gap={2}  
     >
       {videos.map((item, idx) => (
-        item && (item?.snippet?.liveBroadcastContent === "none")  ? (
+        item && (item?.snippet?.liveBroadcastContent === "none" || item?.snippet?.liveBroadcastContent === undefined)  ? (
           <Box key={idx}>
           {item?.snippet?.resourceId?.videoId && <VideoCard video={item}/> }
           {item.id.videoId  && <VideoCard video={item} />}

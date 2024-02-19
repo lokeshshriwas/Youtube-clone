@@ -35,10 +35,11 @@ function SearchBar() {
       <input
         className="search-bar "
         placeholder="Search..."
+        sx={{fontSize : {xs: 10, sm: 12, md: 16}}}
         value={searchTerm}
         onChange={(e) => {setSearchTerm(e.target.value)}}
       />
-      <IconButton type="submit" sx={{p: "10px", color: "red"}} >
+      <IconButton type="submit" sx={{p: {xs: "5px" ,sm: "10px"}, color: "red"}} >
         <Search />
       </IconButton>
     </Paper>

@@ -34,9 +34,9 @@ function PlaylistDetails() {
             zIndex: "10",
             objectFit: "cover",
             marginBottom: "40px",
-            opacity: ".5"
+            opacity: ".5",
           }}
-          sx={{height: {xs: "70px", sm: "150px" , md: "200px"}}}
+          sx={{ height: { xs: "70px", sm: "150px", md: "200px" } }}
         />
       </Box>
       <Box display="flex" p="2">
